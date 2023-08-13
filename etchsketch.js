@@ -35,7 +35,8 @@ function createSquareFunctionality(inputSquares){
 
 
 btnReset.addEventListener("click", function() {
-    hoverOverSquares.forEach(div => {
+    const squares = document.querySelectorAll(".grid-square")
+    squares.forEach(div => {
       div.style.backgroundColor = "white";
     });
 });

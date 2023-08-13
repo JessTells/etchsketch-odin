@@ -7,19 +7,22 @@ body {
 }
 
 .grid-container {
-    margin: 50px;
-    max-width: 480px;
-    max-height: 480px;
+    margin: 24px;
+    height: 600px;
+    width: 600px;
+    display: flex;
 }
 
 .grid-row {
     display: flex;
-    border: 1px solid black;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    
 }
 
 .grid-square {
-    height: 30px;
-    width: 30px;
     border: 1px solid black;
-    flex: 0 1 auto;
+    flex: 1 0 auto;
 }
