@@ -1,6 +1,12 @@
 const gridContainer = document.getElementById("grid-container");
+const btnDimensionSelector = document.querySelectorAll(".btn-dim");
+const btnReset = document.getElementById("reset");
 
 function createGrid(gridDimension){
+    console.log("Create grid");
+    while(gridContainer.firstChild){
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
     for(let i = 0; i < gridDimension; ++i){
         const newGridRow = document.createElement("div");
         newGridRow.classList.add("grid-row");
@@ -13,15 +19,30 @@ function createGrid(gridDimension){
         }
         
     }
+    const hoverOverSquares = document.querySelectorAll(".grid-square");
+    createSquareFunctionality(hoverOverSquares);
 }
 
-createGrid(16);
+function createSquareFunctionality(inputSquares){
+    inputSquares.forEach(div => {
+        div.addEventListener("mouseover", function(){
+            console.log("Hovered div");
+            div.style.backgroundColor = "black";
+        });
+    });
+}
 
-const hoverOverSquare = document.querySelectorAll(".grid-square");
 
-hoverOverSquare.forEach(div => {
-    div.addEventListener("mouseover", function(){
-        console.log("Hovered div");
-        div.style.backgroundColor = "black";
+
+btnReset.addEventListener("click", function() {
+    hoverOverSquares.forEach(div => {
+      div.style.backgroundColor = "white";
+    });
+});
+
+btnDimensionSelector.forEach(button => {
+    button.addEventListener("click", function(){
+        console.log("Grid Created");
+        createGrid(parseInt(button.id, 10));
     });
 });

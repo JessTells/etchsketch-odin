@@ -7,9 +7,9 @@ body {
 }
 
 .grid-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    margin: 50px;
+    max-width: 480px;
+    max-height: 480px;
 }
 
 .grid-row {
@@ -21,4 +21,5 @@ body {
     height: 30px;
     width: 30px;
     border: 1px solid black;
+    flex: 0 1 auto;
 }
