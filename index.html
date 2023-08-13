@@ -8,12 +8,20 @@
     <script src="etchsketch.js" defer></script>
 </head>
 <body>
-    <div class="select-dimensions-container">
-        <button class="btn-dim" id="16">16x16</button>
-        <button class="btn-dim" id="32">32x32</button>
-        <button class="btn-dim" id="64">64x64</button>
+    <div class="header">Etch-A-Sketch</div>
+    <div class="container">
+        <div class="buttons-container">
+            <div class="select-dimensions-container">
+                <button class="btn-dim" id="16">16x16</button>
+                <button class="btn-dim" id="32">32x32</button>
+                <button class="btn-dim" id="64">64x64</button>
+            </div>
+            <button class="reset-button" id="reset">Reset</button>
+        </div>
+        
+        <div class="grid-container" id="grid-container"></div>
+        
     </div>
-    <div class="grid-container" id="grid-container"></div>
-    <button class="reset-button" id="reset">Reset</button>
+    <div class="footer">JessTells</div>
 </body>
 </html>
