@@ -15,6 +15,7 @@ function createGrid(gridDimension){
         for(let j = 0; j < gridDimension; ++j){
             const newGridSquare = document.createElement("div");
             newGridSquare.classList.add("grid-square");
+            newGridSquare.style.backgroundColor = "rgb(250, 250, 250)";
             newGridRow.appendChild(newGridSquare);
         }
         
@@ -26,18 +27,23 @@ function createGrid(gridDimension){
 function createSquareFunctionality(inputSquares){
     inputSquares.forEach(div => {
         div.addEventListener("mouseover", function(){
-            console.log("Hovered div");
-            div.style.backgroundColor = "black";
+            const computedStyle = window.getComputedStyle(div);
+            const backgroundColor = computedStyle.backgroundColor;
+            const rgbValues = backgroundColor.match(/\d+/g);
+            console.log(rgbValues);
+            
+            const whiteVal = parseInt(rgbValues[0]) - 50;
+            
+            div.style.backgroundColor = `rgb(${whiteVal}, ${whiteVal}, ${whiteVal})`;
+            
         });
     });
 }
 
-
-
 btnReset.addEventListener("click", function() {
     const squares = document.querySelectorAll(".grid-square")
     squares.forEach(div => {
-      div.style.backgroundColor = "white";
+        div.style.backgroundColor = "rgb(250, 250, 250)";
     });
 });
 
@@ -47,3 +53,5 @@ btnDimensionSelector.forEach(button => {
         createGrid(parseInt(button.id, 10));
     });
 });
+
+createGrid(16);
