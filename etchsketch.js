@@ -16,3 +16,12 @@ function createGrid(gridDimension){
 }
 
 createGrid(16);
+
+const hoverOverSquare = document.querySelectorAll(".grid-square");
+
+hoverOverSquare.forEach(div => {
+    div.addEventListener("mouseover", function(){
+        console.log("Hovered div");
+        div.style.backgroundColor = "black";
+    });
+});
